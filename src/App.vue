@@ -1,49 +1,38 @@
 <template>
 <div>
-  <p>{{ count }}</p>
-  <p>
-	<button @click="increment">111111111111</button>
-	<button @click="decrement">111111111111</button>
-  </p>
-  <div id="demo">
-      <form id="search">
-        Search <input name="query" v-model="searchQuery" />
-      </form>
-      <BaseTable
-        :heroes="gridData"
-        :columns="gridColumns"
-        :filter-key="searchQuery" 
-      >
-      </BaseTable>
-    </div>
+	<!-- <p>{{ count }}</p> -->
+	<base-pagination/>
+	<form id="search">
+	Search
+		<input name="query" v-model="searchQuery" />
+	</form>
+	<base-table
+	:heroes="gridData"
+	:columns="gridColumns"
+	:filter-key="searchQuery" >
+	</base-table>
 </div>
 </template>
 
 <script>
+import BasePagination from './components/BasePagination.vue'
 import BaseTable from './components/BaseTable.vue'
 export default {
 	name: 'App',
-	components:{BaseTable},
+	components:{BaseTable, BasePagination},
 	data: function() {
 		return {
           searchQuery: "",
-          gridColumns: ["name", "data", "quantity", "distance"],
-          gridData: this.$store.state.db
+          gridColumns: ["data", "name", "quantity", "distance"],
+          gridData: this.$store.state.data
 		}
 	},
-	computed: {
-	count() {
-		return this.$store.state.count
-	}
-  },
-  methods: {
-	increment() {
-		this.$store.commit('increment')
-	},
-	decrement() {
-		this.$store.commit('decrement')
-	}
-  }
+// 	computed: {
+// 	count() {
+// 		return this.$store.state.count
+// 	}
+//   },
+ 
 }
 </script>
 

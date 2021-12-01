@@ -1,13 +1,17 @@
 import { createStore } from 'vuex'
-import db from '../../db/index.json'
+import data from '../../db/index.json'
 
 export const store = createStore({
     state: {
-      count: 0,
-      db,
+      currentPage: 0,
+      data,
+      dataLength: data.length,
+    },
+    getters: {
+      dataLength: state => console.log(state.currentPage)
     },
     mutations: {
-        increment: state => state.count++,
-        decrement: state => state.count--
+        increment: state => state.currentPage++,
+        decrement: state => state.currentPage--
     }
   })
