@@ -3,140 +3,140 @@
         "id": 1,
         "name": "Александр",
         "data":"20-11-2021",
-        "quantity": "1",
-        "distance": "10"
+        "quantity": 1,
+        "distance": 10
     },
     {
         "id": 2,
         "name": "Борис",
         "data":"21-11-2021",
-        "quantity": "2",
-        "distance": "20"
+        "quantity": 2,
+        "distance": 20
     },
     {
         "id": 3,
         "name": "Валерий",
         "data":"22-11-2021",
-        "quantity": "3",
-        "distance": "30"
+        "quantity": 3,
+        "distance": 30
     },
     {
         "id": 4,
         "name": "Георий",
         "data":"23-11-2021",
-        "quantity": "4",
-        "distance": "40"
+        "quantity": 4,
+        "distance": 40
     },
     {
         "id": 5,
         "name": "Дмитрий",
         "data":"24-11-2021",
-        "quantity": "5",
-        "distance": "50"
+        "quantity": 5,
+        "distance": 50
     },
     {
         "id": 6,
         "name": "Елена",
         "data":"25-11-2021",
-        "quantity": "6",
-        "distance": "60"
+        "quantity": 6,
+        "distance": 60
     },
     {
         "id": 7,
         "name": "Жанна",
         "data":"26-11-2021",
-        "quantity": "7",
-        "distance": "70"
+        "quantity": 7,
+        "distance": 70
     },
     {
         "id": 8,
         "name": "Зинаида",
         "data":"27-11-2021",
-        "quantity": "8",
-        "distance": "80"
+        "quantity": 8,
+        "distance": 80
     },
     {
         "id":9,
         "name": "Ирина",
         "data":"28-11-2021",
-        "quantity": "9",
-        "distance": "90"
+        "quantity": 9,
+        "distance": 90
     },
     {
         "id":10,
         "name": "Кристина",
         "data":"29-11-2021",
-        "quantity": "10",
-        "distance": "100"
+        "quantity": 10,
+        "distance": 10
     },
     {
         "id": 11,
         "name": "Александр",
         "data":"30-11-2021",
-        "quantity": "11",
-        "distance": "110"
+        "quantity": 11,
+        "distance": 11
     },
     {
         "id": 12,
         "name": "Борис",
         "data":"01-12-2021",
-        "quantity": "12",
-        "distance": "120"
+        "quantity": 12,
+        "distance": 12
     },
     {
         "id": 13,
         "name": "Валерий",
         "data":"02-12-2021",
-        "quantity": "13",
-        "distance": "130"
+        "quantity": 13,
+        "distance": 13
     },
     {
         "id": 14,
         "name": "Георий",
         "data":"03-12-2021",
-        "quantity": "14",
-        "distance": "140"
+        "quantity": 14,
+        "distance": 14
     },
     {
         "id": 15,
         "name": "Дмитрий",
         "data":"04-12-2021",
-        "quantity": "15",
-        "distance": "150"
+        "quantity": 15,
+        "distance": 15
     },
     {
         "id": 16,
         "name": "Елена",
         "data":"05-12-2021",
-        "quantity": "16",
-        "distance": "160"
+        "quantity": 16,
+        "distance": 16
     },
     {
         "id": 17,
         "name": "Жанна",
         "data":"06-12-2021",
-        "quantity": "17",
-        "distance": "170"
+        "quantity": 17,
+        "distance": 17
     },
     {
         "id": 18,
         "name": "Зинаида",
         "data":"07-12-2021",
-        "quantity": "18",
-        "distance": "180"
+        "quantity": 18,
+        "distance": 18
     },
     {
         "id": 19,
         "name": "Ирина",
         "data":"08-12-2021",
-        "quantity": "19",
-        "distance": "190"
+        "quantity": 19,
+        "distance": 19
     },
     {
         "id":20,
         "name": "Кристина",
         "data":"09-12-2021",
-        "quantity": "20",
-        "distance": "200"
+        "quantity": 20,
+        "distance": 20
     }
 ]
