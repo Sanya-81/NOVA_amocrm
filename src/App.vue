@@ -7,8 +7,8 @@
 		<input name="query" v-model="searchQuery" />
 	</form>
 	<base-table
-	:heroes="gridData"
-	:columns="gridColumns"
+	:tebleData="dbData"
+	:thCell="thData"
 	:filter-key="searchQuery" >
 	</base-table>
 </div>
@@ -23,15 +23,21 @@ export default {
 	data: function() {
 		return {
           searchQuery: "",
-          gridColumns: ["data", "name", "quantity", "distance"],
-          gridData: this.$store.state.data
+          thData: ["data", "name", "quantity", "distance"],
+        //   dbData: this.$store.state.data
+        //   dbData:  this.$store.getters.sortTable
 		}
 	},
-// 	computed: {
-// 	count() {
-// 		return this.$store.state.count
+	computed: {
+		dbData() { return this.$store.getters.sortTable }
+// 	// 	count() {
+// 	this.dbData =  this.$store.getters.sortTable }
+// // 		return this.$store.state.count
+	},
+// 	methods: {
+
 // 	}
-//   },
+
  
 }
 </script>

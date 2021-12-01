@@ -5,9 +5,14 @@
         @click="prevPage">
     Previous
     </button>
-    {{ currentPage }}
     <button 
-        :disabled="currentPage >= dataLength" 
+        v-for="n in numbersPage "
+        :key="n"
+        :disabled="currentPage === n - 1" 
+        @click="page(n - 1)">
+    {{n}}</button>
+    <button 
+        :disabled="currentPage >= numbersPage - 1" 
         @click="nextPage">
     Next
     </button>
@@ -19,7 +24,7 @@ export default {
     name: "pagination",
     data: function() {
         return {
-            dataLength: this.$store.state.dataLength
+            numbersPage: this.$store.getters.numbersPage
         }
     },
 
@@ -31,11 +36,18 @@ export default {
 
     methods: {
         prevPage() {
-            this.$store.commit('decrement')
-	},
+            this.$store.commit('decrement');
+        },
+
+        page(n) {
+            this.$store.commit('multiply', n);
+            console.log(n)
+        },
+
         nextPage() {
             this.$store.commit('increment');
-        }
+        },
+
   }
 }
 </script>
