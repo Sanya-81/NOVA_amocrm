@@ -1,6 +1,6 @@
 <template>
 <div>
-    <p class="selectLabel" id="jobLabel">фильтр</p>
+    <p class="selectLabel" id="jobLabel"><slot></slot></p>
     <div class="selectWrapper">
         <select class="
                     selectNative 
@@ -67,6 +67,10 @@ export default {
     props: {
         db: {
             type: Array,
+        },
+        name: {
+            type: String,
+            default: 'фильтр'
         }
     },
     data() {
@@ -82,6 +86,19 @@ export default {
         }
     },
     
+     watch: {
+        elSelectState(){
+            console.log(this.elSelectState)
+            console.log(this.name)
+            this.$store.commit({
+                type: 'key', 
+                elem: this.elSelectState,
+                name: this.name
+            });
+        },
+
+    },
+
     methods: {
         changeNative(event) {
             const nativeValue = event.target.value;

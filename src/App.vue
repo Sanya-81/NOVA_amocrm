@@ -14,11 +14,15 @@
 	>
 	</base-table>
 <base-select
-		:db="db_1">
-	</base-select>
+	:db="db_1"
+	:name="name[0]">
+фильтр: {{ name[0] }}
+</base-select>
 <base-select
-		:db="db_2">
-	</base-select>
+	:db="db_2"
+	:name="name[1]">
+фильтр: {{ name[1] }}
+</base-select>
 </div>
 </template>
 
@@ -31,6 +35,7 @@ export default {
 	components:{BaseTable, BasePagination, BaseSelect},
 	data: function() {
 		return {
+			name: ['TH', 'TD']
 			// searchQuery: "",
 		}
 	},

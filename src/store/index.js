@@ -8,9 +8,13 @@ export const store = createStore({
       db: data,
       data: data[0],
       dataLength: data[0].length,
-      key: 'имя',
+      key: {
+        TH: '',
+        TD: '',
+      },
       filterKey: ''
     },
+
     getters: {
       numbersPage: state => {
         console.log(state.dataLength)
@@ -21,10 +25,10 @@ export const store = createStore({
         let a = state.data;
         let b = {};
 
-        if (state.filterKey) {
+        if (state.key.TH) {
 
           a = a.filter(function(row) {
-            return row[state.key].toLowerCase().indexOf(state.filterKey) > -1;
+            return row[state.key.TH].toLowerCase().indexOf(state.filterKey) > -1;
           });
 
           b = listData(a)
@@ -60,8 +64,15 @@ export const store = createStore({
         increment: state => state.currentPage++,
         decrement: state => state.currentPage--,
         multiply: (state, n) => state.currentPage = n,
-        filterKey: (state, vmodel) => state.filterKey = vmodel
-        
+        filterKey: (state, vmodel) => state.filterKey = vmodel,
+        key: (state, data) => {
+          
+          data.name === 'TH'
+            ? state.key.TH = data.elem
+            : state.key.TD = data.elem
+
+          // state.filterKey = data.elem
+          console.log(state.key)}
       }
     })
 
