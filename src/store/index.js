@@ -119,6 +119,8 @@ export const store = createStore({
       }
     })
 
+    // определение того, сколько строк предсавлено для отображения в таблице
+    // и по сколько перелистывать при использовании погинации
     function listData(arr) {
       let start =  store.state.currentPage * store.state.size;
       let end = start + store.state.size;

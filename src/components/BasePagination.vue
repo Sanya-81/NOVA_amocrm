@@ -22,11 +22,6 @@
 <script>
 export default {
     name: "pagination",
-    data: function() {
-        return {
-            }
-    },
-
     computed: {
         numbersPage() {
             return this.$store.getters.numbersPage
@@ -50,8 +45,7 @@ export default {
         nextPage() {
             this.$store.commit('increment');
         },
-
-  }
+    }
 }
 </script>
 

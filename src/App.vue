@@ -1,33 +1,35 @@
 <template>
-<div>
-	<!-- <p>{{ count }}</p> -->
-	<base-pagination/>
-	
-	
-
+<div class="g-prt__container--wrapper">
+<div class="g-prt__container">
+	<base-pagination
+		class="g-chd__pagination">
+	</base-pagination>
 	<base-table
-	:tebleData="sortTable"
-	:thCell="thData"
-	>
+		class="g-chd__table"
+		:tebleData="sortTable"
+		:thCell="thData">
 	</base-table>
-<base-select
-	:db="db_1"
-	:name="name[0]">
-фильтр: {{ name[0] }}
-</base-select>
-<base-select
-	:db="db_2"
-	:name="name[1]">
-фильтр: {{ name[1] }}
-</base-select>
-<br>
-<br>
-<br>
-<br>
-<form id="search">
-	Search
-		<input name="query" v-model="searchQuery" />
+	<form 
+		class="g-prt__form g-chd__form"
+		id="search">
+		<input
+			class="g-chd__input" 
+			name="query" 
+			v-model="searchQuery"/>
+		<base-select
+			class="g-chd__select-th"
+			:db="db_1"
+			:name="name[0]">
+		фильтр: {{ name[0] }}
+		</base-select>
+		<base-select
+			class="g-chd__select-td"
+			:db="db_2"
+			:name="name[1]">
+		фильтр: {{ name[1] }}
+		</base-select>
 	</form>
+</div>
 </div>
 </template>
 
@@ -67,6 +69,30 @@ export default {
 </script>
 
 <style>
+  .g-prt__container--wrapper {
+        display: grid;
+        height: 100vh;
+        align-content: center;
+        justify-content: center;
+        background-color: var(--blue50);
+    }
+	.g-prt__container {
+        border-radius: 24px;
+        padding: 40px 30px;
+        display: grid;
+        grid: 
+            "table" auto
+            "pagination" auto
+            "form" auto
+            /minmax(360px, 400px);
+        border: 2px solid var(--blue100);
+        background-color: var(--white);
+        filter: var(--dropShadowForm);
+    }
+
+    .g-chd__table { grid-area: table; }
+    .g-chd__pagination { grid-area: pagination; }
+    .g-chd__form { grid-area: form; }
    :root {
     --number-9: 0.25;
     --number-8: 0.16;
