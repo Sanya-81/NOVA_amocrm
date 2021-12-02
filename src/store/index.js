@@ -35,37 +35,29 @@ export const store = createStore({
                 });
               break;
               
-              case "количество",
-                   "расстояние":
+              case "количество":
+              case "расстояние":
+                // необходимо предварительно отфильтровать по числам
+                // прежде чем переходить к фильру по TD ниже
                 if(state.key.TD === "дубли") {
                   arr = arr.filter((obj) => obj[state.key.TH] === +state.filterKey)
-                  console.log(arr)
                 }
                 if(state.key.TD === "больше чем") {
                   arr = arr.filter((obj) => obj[state.key.TH] > +state.filterKey)
-                  console.log(arr)
                 }
                 if(state.key.TD === "меньше чем") {
                   arr = arr.filter((obj) => obj[state.key.TH] < +state.filterKey)
-                  console.log(arr)
                 }
-              // arr = arr.filter((obj) => {
-              //   return state.key.TD === "дубль"
-              //   ? obj[state.key.TH] === +state.filterKey
-              //   : state.key.TD === "больше чем"
-              //   ? obj[state.key.TH] > +state.filterKey
-              //   : obj[state.key.TH] < +state.filterKey
-              // })
-              console.log(arr)
               break;
             }
-
+            // обновляем лист таблицы после использования погинации
             result = listData(arr)
-            
             // обновляем длину массива для кнопок numberPage
             state.dataLength = arr.length
           }
-
+          
+          // после нахождения всех совпадений в фильтр: TH
+          // сортируем для таблицы по параметрам фильтр: TD  
           if (state.key.TD) {
             let order;
             switch(state.key.TD) {
@@ -87,34 +79,24 @@ export const store = createStore({
               b = b[state.key.TH];
               return (a === b ? 0 : a > b ? 1 : -1) * order;
             });
-            console.log(arr)
           } 
-
           
-          result = listData(arr)
-          
-        } else {
-          // if (state.filterKey) {
+        // обновляем лист таблицы после использования погинации
+        result = listData(arr)
+        
+        // если нет поиска по фильтру, работаем с чистым data[0]
+        // числа будут строками! из-за String()  
+        } else { 
             arr = arr.filter(function (row) {
               return Object.keys(row).some(function (key) {
                 return String(row[key]).toLowerCase().indexOf(state.filterKey) > -1;
               });
             });
-            //   a = a.filter(function(obj) {
-              //     return Object.keys(obj).some(function(key) {
-                //       return String(obj[key]).toLowerCase().indexOf(state.filterKey) > -1;
-                //     });
-                //   });
-                
-                //   b = listData(a)
-                
-                //   // обновляем длину массива для кнопок numberPage
-                //   state.dataLength = a.length
-                // } else {
-                  
-                  // обновляем лист таблицы после использования погинации
-                  result = listData(arr)
+
+        // обновляем лист таблицы после использования погинации
+        result = listData(arr)
         }
+
       return result
       },
 
@@ -129,12 +111,9 @@ export const store = createStore({
         multiply: (state, n) => state.currentPage = n,
         filterKey: (state, vmodel) => state.filterKey = vmodel,
         key: (state, data) => {
-          
           data.name === 'TH'
             ? state.key.TH = data.elem
             : state.key.TD = data.elem
-
-          // state.filterKey = data.elem
         }
       }
     })
