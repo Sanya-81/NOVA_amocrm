@@ -13,6 +13,7 @@
 		class="g-prt__form g-chd__form"
 		id="search">
 		<input
+			placeholder="поиск"
 			class="g-chd__input input" 
 			name="query" 
 			v-model="searchQuery"/>
@@ -59,12 +60,7 @@ export default {
 				this.$store.commit('filterKey', value);
 			}
 		}
-// 	// 	count() 2
-// 	this.sortTable =  this.$store.getters.sortTable }
-// // 		return this.$store.state.count
 	},
-
- 
 }
 </script>
 
@@ -82,7 +78,7 @@ export default {
         display: grid;
         grid: 
             "table" 275px
-            "pagination" 50px
+            "pagination" 150px
             "form" auto
             /minmax(360px, 768px);
         border: 2px solid var(--blue100);
@@ -126,12 +122,14 @@ export default {
     --number-5: 0.04;
     --number-4: 0.02;
     
+	--red: red;
+
     --white: #ffffff;
     --blue50: #EBF4F8;
     --blue100: #DBE2EA;
 	--blue200: #f9f9f9;
     --blue600: #0880AE;
-    --blue800: #756F86;
+    --blue800: #61a044;
     --blue900: #2C2738;
 
     --black9: rgba(0, 0, 0, var(--number-9));
@@ -177,7 +175,7 @@ export default {
 		font-size: 14px;
         font-family: 'IBM Plex Sans', sans-serif;
         box-sizing: border-box;
-        color: var(--blue800);
+        color: var(--blue600);
         background: var(--white);
     }
     
@@ -205,7 +203,7 @@ td {
 
 th,
 td {
-	min-width: 80px;
+	min-width: 120px;
 	padding: 10px 20px;
 }
 
