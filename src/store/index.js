@@ -4,40 +4,46 @@ import data from '../../db/index.json'
 export const store = createStore({
     state: {
       currentPage: 0,
-      size: 5,
+      size: 3,
       db: data,
       data: data[0],
       dataLength: data[0].length,
       filterKey: ''
     },
     getters: {
-      numbersPage: state =>  Math.ceil(state.dataLength / state.size),
-      sortTable: (state) => {
-        // if (state.filterKey) {
-          // tebleData = tebleData.filter(function (row) {
-          //   return Object.keys(row).some(function (key) {
-          //     return String(row[key]).toLowerCase().indexOf(filterKey) > -1;
-          //   });
-          // });
-        // } 
-        let a = state.data
-        // let start =  state.currentPage * state.size;
-        // let end = start + state.size;
-        // let b = a.slice(start, end) 
-        let b = listData(a)
-        // state.currentPage = 0;
-        return b
+      numbersPage: state => {
+        console.log(state.dataLength)
+        return Math.ceil(state.dataLength / state.size);
+      }, 
         
+      sortTable: (state) => {
+        let a = state.data;
+        let b = {};
+
+        if (state.filterKey) {
+          a = a.filter(function (row) {
+            return Object.keys(row).some(function (key) {
+              return String(row[key]).toLowerCase().indexOf(state.filterKey) > -1;
+            });
+          });
+
+          b = listData(a)
+          
+          // обновляем длину массива для кнопок numberPage
+          state.dataLength = a.length
+        } else {
+          
+          // обновляем лист таблицы после использования погинации
+          b = listData(a)
+        }
+      return b
       },
-      thData: state => {
-        return state.db[1].map((obj) => obj.content)
-      },
+
+      thData: state => { return state.db[1].map((obj) => obj.content) },
       db_1: state => { return state.db[1] },
       db_2: state => { return state.db[2] }
-      // Page: (state, getters) => {
-        //   getters.sortTable(state) 
-        // }
       },
+
       mutations: {
         increment: state => state.currentPage++,
         decrement: state => state.currentPage--,

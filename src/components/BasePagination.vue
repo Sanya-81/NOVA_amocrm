@@ -6,7 +6,7 @@
     Previous
     </button>
     <button 
-        v-for="n in numbersPage "
+        v-for="n in numbersPage"
         :key="n"
         :disabled="currentPage === n - 1" 
         @click="page(n - 1)">
@@ -24,11 +24,14 @@ export default {
     name: "pagination",
     data: function() {
         return {
-            numbersPage: this.$store.getters.numbersPage
-        }
+            }
     },
 
     computed: {
+        numbersPage() {
+            return this.$store.getters.numbersPage
+        },
+
         currentPage() {
             return this.$store.state.currentPage
         }
