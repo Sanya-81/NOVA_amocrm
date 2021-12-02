@@ -1,35 +1,35 @@
 <template>
 <div class="g-prt__container--wrapper">
 <div class="g-prt__container">
-	<base-pagination
-		class="g-chd__pagination">
-	</base-pagination>
-	<base-table
-		class="g-chd__table"
-		:tebleData="sortTable"
-		:thCell="thData">
-	</base-table>
-	<form 
-		class="g-prt__form g-chd__form"
-		id="search">
-		<input
-			placeholder="поиск"
-			class="g-chd__input input" 
-			name="query" 
-			v-model="searchQuery"/>
-		<base-select
-			class="g-chd__select-th"
-			:db="db_1"
-			:name="name[0]">
-		фильтр: {{ name[0] }}
-		</base-select>
-		<base-select
-			class="g-chd__select-td"
-			:db="db_2"
-			:name="name[1]">
-		фильтр: {{ name[1] }}
-		</base-select>
-	</form>
+    <base-pagination
+        class="g-chd__pagination">
+    </base-pagination>
+    <base-table
+        class="g-chd__table"
+        :tebleData="sortTable"
+        :thCell="thData">
+    </base-table>
+    <form 
+        class="g-prt__form g-chd__form"
+        id="search">
+        <input
+            placeholder="поиск"
+            class="g-chd__input input" 
+            name="query" 
+            v-model="searchQuery"/>
+        <base-select
+            class="g-chd__select-th"
+            :db="db_1"
+            :name="name[0]">
+        фильтр: {{ name[0] }}
+        </base-select>
+        <base-select
+            class="g-chd__select-td"
+            :db="db_2"
+            :name="name[1]">
+        фильтр: {{ name[1] }}
+        </base-select>
+    </form>
 </div>
 </div>
 </template>
@@ -39,28 +39,28 @@ import BaseSelect from './components/BaseSelect.vue'
 import BasePagination from './components/BasePagination.vue'
 import BaseTable from './components/BaseTable.vue'
 export default {
-	name: 'App',
-	components:{BaseTable, BasePagination, BaseSelect},
-	data: function() {
-		return {
-			name: ['TH', 'TD']
-			// searchQuery: "",
-		}
-	},
-	computed: {
-		sortTable() { return this.$store.getters.sortTable },
-		thData() { return this.$store.getters.thData },
-		db_1() { return this.$store.getters.db_1 },
-		db_2() { return this.$store.getters.db_2 },
-		searchQuery: {
-			get() {
-				return this.$store.state.filterKey
-			},
-			set(value) {
-				this.$store.commit('filterKey', value);
-			}
-		}
-	},
+    name: 'App',
+    components:{BaseTable, BasePagination, BaseSelect},
+    data: function() {
+        return {
+            name: ['TH', 'TD']
+            // searchQuery: "",
+        }
+    },
+    computed: {
+        sortTable() { return this.$store.getters.sortTable },
+        thData() { return this.$store.getters.thData },
+        db_1() { return this.$store.getters.db_1 },
+        db_2() { return this.$store.getters.db_2 },
+        searchQuery: {
+            get() {
+                return this.$store.state.filterKey
+            },
+            set(value) {
+                this.$store.commit('filterKey', value);
+            }
+        }
+    },
 }
 </script>
 
@@ -72,8 +72,8 @@ export default {
         justify-content: center;
         background-color: var(--blue50);
     }
-	.g-prt__container {
-		border-radius: 10px;
+    .g-prt__container {
+        border-radius: 10px;
         padding: 40px 30px;
         display: grid;
         grid: 
@@ -86,22 +86,22 @@ export default {
         filter: var(--dropShadowForm);
     }
 
-	.g-chd__form { grid-area: form; }
+    .g-chd__form { grid-area: form; }
     .g-chd__table { grid-area: table; }
     .g-chd__pagination { 
-		grid-area: pagination; 
-		justify-self: center;
-		align-self: center;
-	}
+        grid-area: pagination; 
+        justify-self: center;
+        align-self: center;
+    }
 
-	.g-prt__form {
-		
+    .g-prt__form {
+        
         /* align-content: center; */
         /* justify-content: center; */
-		border-radius: 5px;
+        border-radius: 5px;
         padding: 40px 30px;
         display: grid;
-		gap: 20px;
+        gap: 20px;
         grid: 
             "input input" 50px
            "selectTH selectHD" auto
@@ -122,12 +122,12 @@ export default {
     --number-5: 0.04;
     --number-4: 0.02;
     
-	--red: red;
+    --red: red;
 
     --white: #ffffff;
     --blue50: #EBF4F8;
     --blue100: #DBE2EA;
-	--blue200: #f9f9f9;
+    --blue200: #f9f9f9;
     --blue600: #0880AE;
     --blue800: #61a044;
     --blue900: #2C2738;
@@ -165,14 +165,14 @@ export default {
     
     --shadowBorder: var(--blue600) 0 0 0 2px; 
     } 
-	@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500&display=swap');
  
     /* 
     BOX-SIZING важен для коррекного отображения 
     select custom AND select native 
     */
  body {
-		font-size: 14px;
+        font-size: 14px;
         font-family: 'IBM Plex Sans', sans-serif;
         box-sizing: border-box;
         color: var(--blue600);
@@ -185,26 +185,26 @@ export default {
 
 
 table {
-	border: 2px solid var(--blue900);
-	border-radius: 3px;
-	background-color: var(--white);
+    border: 2px solid var(--blue900);
+    border-radius: 3px;
+    background-color: var(--white);
 }
 
 th {
-	background-color: var(--blue800);
-	color: var(--blue50);
-	letter-spacing: .1em;
-	
+    background-color: var(--blue800);
+    color: var(--blue50);
+    letter-spacing: .1em;
+    
 }
 
 td {
-	background-color: var(--blue200);
+    background-color: var(--blue200);
 }
 
 th,
 td {
-	min-width: 120px;
-	padding: 10px 20px;
+    min-width: 120px;
+    padding: 10px 20px;
 }
 
 </style>

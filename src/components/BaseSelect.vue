@@ -235,7 +235,7 @@ export default {
         border-radius: 6px;
         box-shadow: var(--blue100) 0 0 0 2px;
 
-        background-color: var(--white);
+        background-color: #fff;
         font-size: var(--font);
         line-height: 2;
     }
