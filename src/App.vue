@@ -77,12 +77,12 @@ export default {
         background-color: var(--blue50);
     }
 	.g-prt__container {
-        border-radius: 24px;
+        border-radius: 10px;
         padding: 40px 30px;
         display: grid;
         grid: 
-            "table" auto
-            "pagination" auto
+            "table" 275px
+            "pagination" 50px
             "form" auto
             /minmax(360px, 768px);
         border: 2px solid var(--blue100);
@@ -90,19 +90,23 @@ export default {
         filter: var(--dropShadowForm);
     }
 
+	.g-chd__form { grid-area: form; }
     .g-chd__table { grid-area: table; }
-    .g-chd__pagination { grid-area: pagination; }
-    .g-chd__form { grid-area: form; }
-	
+    .g-chd__pagination { 
+		grid-area: pagination; 
+		justify-self: center;
+		align-self: center;
+	}
+
 	.g-prt__form {
-        border-radius: 24px;
+        border-radius: 5px;
         padding: 40px 30px;
         display: grid;
+		gap: 20px;
         grid: 
-            "input" auto
-            "selectTH" auto
-            "selectHD" auto
-            /minmax(360px, 768px);
+            "input input" 50px
+           "selectTH selectHD" auto
+            / auto;
         border: 2px solid var(--blue100);
         background-color: var(--white);
         filter: var(--dropShadowForm);
