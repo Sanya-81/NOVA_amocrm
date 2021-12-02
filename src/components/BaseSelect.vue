@@ -179,6 +179,7 @@ export default {
 }
 </script>
 
+
 <style>
     .selectNative,
     .selectCustom {
@@ -224,11 +225,11 @@ export default {
     .selectNative,
     .selectCustom-trigger {
         --font:    16px;
-        --width:  360px;
+        /* --width:  360px; */
         --height:  52px;
 
-        /* width: 100%;     */
-        /* height: var(--height); */
+        width: 100%;
+        height: var(--height);
         padding: calc((var(--height) / 2) - var(--font));
         padding-left: 16px;
         border-radius: 6px;

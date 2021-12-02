@@ -77,7 +77,7 @@ export default {
         background-color: var(--blue50);
     }
 	.g-prt__container {
-        border-radius: 10px;
+		border-radius: 10px;
         padding: 40px 30px;
         display: grid;
         grid: 
@@ -99,7 +99,10 @@ export default {
 	}
 
 	.g-prt__form {
-        border-radius: 5px;
+		
+        /* align-content: center; */
+        /* justify-content: center; */
+		border-radius: 5px;
         padding: 40px 30px;
         display: grid;
 		gap: 20px;
@@ -165,12 +168,23 @@ export default {
     --shadowBorder: var(--blue600) 0 0 0 2px; 
     } 
 	@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500&display=swap');
-
-    body {
-        font-family: 'IBM Plex Sans', sans-serif;
+ 
+    /* 
+    BOX-SIZING важен для коррекного отображения 
+    select custom AND select native 
+    */
+ body {
 		font-size: 14px;
-		color: var(--blue600);
-}
+        font-family: 'IBM Plex Sans', sans-serif;
+        box-sizing: border-box;
+        color: var(--blue800);
+        background: var(--white);
+    }
+    
+    body * {
+        box-sizing: inherit;
+    }
+
 
 table {
 	border: 2px solid var(--blue900);
@@ -202,14 +216,10 @@ td {
     }
     
     .input {
-        margin-top: 7px;
         outline: none;
-        width: 100%;
         height: 52px;
         padding-left: 16px;
-        border-radius: 6px;
         border: 1px solid var(--blue100);
-        box-shadow:  var(--shadowNormal);
         background-color: var(--white);
     
         &::placeholder {
