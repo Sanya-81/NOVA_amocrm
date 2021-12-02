@@ -9,9 +9,9 @@
 	
 
 	<base-table
-	:tebleData="dbData"
+	:tebleData="sortTable"
 	:thCell="thData"
-	:filter-key="searchQuery" >
+	>
 	</base-table>
 <base-select
 		:db="db_1">
@@ -31,21 +31,26 @@ export default {
 	components:{BaseTable, BasePagination, BaseSelect},
 	data: function() {
 		return {
-			searchQuery: "",
+			// searchQuery: "",
 		}
 	},
 	computed: {
-		dbData() { return this.$store.getters.sortTable },
+		sortTable() { return this.$store.getters.sortTable },
 		thData() { return this.$store.getters.thData },
 		db_1() { return this.$store.getters.db_1 },
-		db_2() { return this.$store.getters.db_2 }
+		db_2() { return this.$store.getters.db_2 },
+		searchQuery: {
+			get() {
+				return this.$store.state.filterKey
+			},
+			set(value) {
+				this.$store.commit('filterKey', value);
+			}
+		}
 // 	// 	count() 2
-// 	this.dbData =  this.$store.getters.sortTable }
+// 	this.sortTable =  this.$store.getters.sortTable }
 // // 		return this.$store.state.count
 	},
-// 	methods: {
-
-// 	}
 
  
 }

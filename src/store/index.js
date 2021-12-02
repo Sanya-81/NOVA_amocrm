@@ -14,11 +14,11 @@ export const store = createStore({
       numbersPage: state =>  Math.ceil(state.dataLength / state.size),
       sortTable: (state) => {
         // if (state.filterKey) {
-        //   // tebleData = tebleData.filter(function (row) {
-        //   //   return Object.keys(row).some(function (key) {
-        //   //     return String(row[key]).toLowerCase().indexOf(filterKey) > -1;
-        //   //   });
-        //   // });
+          // tebleData = tebleData.filter(function (row) {
+          //   return Object.keys(row).some(function (key) {
+          //     return String(row[key]).toLowerCase().indexOf(filterKey) > -1;
+          //   });
+          // });
         // } 
         let a = state.data
         // let start =  state.currentPage * state.size;
@@ -41,7 +41,8 @@ export const store = createStore({
       mutations: {
         increment: state => state.currentPage++,
         decrement: state => state.currentPage--,
-        multiply: (state, n) => state.currentPage = n
+        multiply: (state, n) => state.currentPage = n,
+        filterKey: (state, vmodel) => state.filterKey = vmodel
         
       }
     })
