@@ -22,37 +22,69 @@ export const store = createStore({
       }, 
         
       sortTable: (state) => {
-        let a = state.data;
-        let b = {};
+        let arr = state.data;
+        let result = null;
 
-        if (state.key.TH) {
+        if (state.filterKey) {
 
-          a = a.filter(function(row) {
-            return row[state.key.TH].toLowerCase().indexOf(state.filterKey) > -1;
+          if(state.key.TH) {
+            arr = arr.filter(function(obj) {
+              return obj[state.key.TH].toLowerCase().indexOf(state.filterKey) > -1;
+            });
+            result = listData(arr)
+            console.log(result)
+            // обновляем длину массива для кнопок numberPage
+            state.dataLength = arr.length
+          }
+          if (state.key.TD) {
+
+            switch(state.key.TD) {
+              case "дубли": 
+              
+              break;
+              
+              case "меньше чем": 
+              
+              break;
+            
+              case "больше чем": 
+                arr = arr.slice().sort(function (a, b) {
+                  a = a[state.key.TH];
+                  b = b[state.key.TH];
+                  return (a === b ? 0 : a > b ? 1 : -1) * 1;
+                });
+                // arr = arr.filter((obj) => )
+              break;
+            }
+          } 
+
+          arr = arr.filter(function (row) {
+            return Object.keys(row).some(function (key) {
+              return String(row[key]).toLowerCase().indexOf(state.filterKey) > -1;
+            });
           });
-
-          b = listData(a)
-          
-          // обновляем длину массива для кнопок numberPage
-          state.dataLength = a.length
+        
+        result = listData(arr)
+          console.log(state.filterKey)
         } else {
-        // if (state.filterKey) {
-        //   a = a.filter(function(row) {
-        //     return Object.keys(row).some(function(key) {
-        //       return String(row[key]).toLowerCase().indexOf(state.filterKey) > -1;
-        //     });
-        //   });
-
-        //   b = listData(a)
-          
-        //   // обновляем длину массива для кнопок numberPage
-        //   state.dataLength = a.length
-        // } else {
-          
-          // обновляем лист таблицы после использования погинации
-          b = listData(a)
+          // if (state.filterKey) {
+            //   a = a.filter(function(obj) {
+              //     return Object.keys(obj).some(function(key) {
+                //       return String(obj[key]).toLowerCase().indexOf(state.filterKey) > -1;
+                //     });
+                //   });
+                
+                //   b = listData(a)
+                
+                //   // обновляем длину массива для кнопок numberPage
+                //   state.dataLength = a.length
+                // } else {
+                  
+                  // обновляем лист таблицы после использования погинации
+                  result = listData(arr)
+                  console.log('bbbbbbbbb')
         }
-      return b
+      return result
       },
 
       thData: state => { return state.db[1].map((obj) => obj.content) },
@@ -76,8 +108,8 @@ export const store = createStore({
       }
     })
 
-    function listData(a) {
+    function listData(arr) {
       let start =  store.state.currentPage * store.state.size;
       let end = start + store.state.size;
-      return a.slice(start, end)
+      return arr.slice(start, end)
     }
