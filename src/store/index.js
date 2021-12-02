@@ -37,33 +37,25 @@ export const store = createStore({
             state.dataLength = arr.length
           }
           if (state.key.TD) {
-
+            let order;
             switch(state.key.TD) {
               case "дубли": 
-                arr = arr.slice().sort(function (a, b) {
-                a = a[state.key.TH];
-                b = b[state.key.TH];
-                return (a === b) * 0;
-              });
+               order = 0;
               break;
-              
+               
               case "меньше чем": 
-                arr = arr.slice().sort(function (a, b) {
-                a = a[state.key.TH];
-                b = b[state.key.TH];
-                return  (a > b) * -1;
-              });
-              break;
-            
+                order = -1;
+                break;
+                
               case "больше чем": 
-                arr = arr.slice().sort(function (a, b) {
-                  a = a[state.key.TH];
-                  b = b[state.key.TH];
-                  return (a < b) * 1;
-                });
-                // arr = arr.filter((obj) => )
+                order = 1;
               break;
             }
+            arr = arr.slice().sort(function (a, b) {
+              a = a[state.key.TH];
+              b = b[state.key.TH];
+              return (a === b ? 0 : a > b ? 1 : -1) * order;
+            });
           } 
 
           arr = arr.filter(function (row) {
