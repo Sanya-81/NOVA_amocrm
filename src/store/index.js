@@ -4,7 +4,7 @@ import data from '../../db/index.json'
 export const store = createStore({
     state: {
       currentPage: 0,
-      size: 3,
+      size: 6,
       db: data,
       data: data[0],
       dataLength: data[0].length,
@@ -28,8 +28,13 @@ export const store = createStore({
         if (state.filterKey) {
 
           if(state.key.TH) {
+            
+            // switch(state.key.TH) {
+            //   case sta
+            // }
+
             arr = arr.filter(function(obj) {
-              return obj[state.key.TH].toLowerCase().indexOf(state.filterKey) > -1;
+              return String(obj[state.key.TH]).toLowerCase().indexOf(state.filterKey) > -1;
             });
             result = listData(arr)
             console.log(result)
