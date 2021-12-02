@@ -1,6 +1,6 @@
 <template>
 <div>
-    <p class="selectLabel" id="jobLabel">Язык</p>
+    <p class="selectLabel" id="jobLabel">фильтр</p>
     <div class="selectWrapper">
         <select class="
                     selectNative 
@@ -78,7 +78,7 @@ export default {
             value: '',
             content: '',
             'data-value': '',
-            elSelectState: 'Язык',
+            elSelectState: 'выбирите ячейку',
         }
     },
     

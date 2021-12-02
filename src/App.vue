@@ -14,7 +14,10 @@
 	:filter-key="searchQuery" >
 	</base-table>
 <base-select
-		:db="db">
+		:db="db_1">
+	</base-select>
+<base-select
+		:db="db_2">
 	</base-select>
 </div>
 </template>
@@ -28,28 +31,43 @@ export default {
 	components:{BaseTable, BasePagination, BaseSelect},
 	data: function() {
 		return {
-					searchQuery: "",
-					thData: ["data", "name", "quantity", "distance"],
-				//   dbData: this.$store.state.data
-				//   dbData:  this.$store.getters.sortTable
-				db: [
-                {
-                    "value": "E1",
-                    "content": "Русский",
-                },
-                {
-                    "value":"E2",
-                    "content":"Английский",
-                },
-                {
-                    "value":"E3",
-                    "content":"Китайский",
-                },
-                {
-                    "value":"E4",
-                    "content":"Испанский",
-                },
-            ],
+			searchQuery: "",
+			thData: ["дата", "имя", "количество", "расстояние"],
+			//   dbData: this.$store.state.data
+			//   dbData:  this.$store.getters.sortTable
+			db_1: [
+				{
+					"value": "th_1",
+					"content": "дата",
+				},
+				{
+					"value":"th_2",
+					"content":"имя",
+				},
+				{
+					"value":"th_3",
+					"content":"количество",
+				},
+				{
+					"value":"th_4",
+					"content":"дистанция",
+				},
+			],
+			
+			db_2: [
+				{
+					"value": "index_1",
+					"content": "дубли",
+				},
+				{
+					"value":"index_2",
+					"content":"больше чем",
+				},
+				{
+					"value":"index_3",
+					"content":"меньше чем",
+				},
+			]
 		}
 	},
 	computed: {
