@@ -2,10 +2,7 @@
 <div>
 	<!-- <p>{{ count }}</p> -->
 	<base-pagination/>
-	<form id="search">
-	Search
-		<input name="query" v-model="searchQuery" />
-	</form>
+	
 	
 
 	<base-table
@@ -23,6 +20,14 @@
 	:name="name[1]">
 фильтр: {{ name[1] }}
 </base-select>
+<br>
+<br>
+<br>
+<br>
+<form id="search">
+	Search
+		<input name="query" v-model="searchQuery" />
+	</form>
 </div>
 </template>
 
