@@ -8,6 +8,7 @@ export const store = createStore({
       db: data,
       data: data[0],
       dataLength: data[0].length,
+      key: 'имя',
       filterKey: ''
     },
     getters: {
@@ -21,10 +22,9 @@ export const store = createStore({
         let b = {};
 
         if (state.filterKey) {
-          a = a.filter(function (row) {
-            return Object.keys(row).some(function (key) {
-              return String(row[key]).toLowerCase().indexOf(state.filterKey) > -1;
-            });
+
+          a = a.filter(function(row) {
+            return row[state.key].toLowerCase().indexOf(state.filterKey) > -1;
           });
 
           b = listData(a)
@@ -32,6 +32,18 @@ export const store = createStore({
           // обновляем длину массива для кнопок numberPage
           state.dataLength = a.length
         } else {
+        // if (state.filterKey) {
+        //   a = a.filter(function(row) {
+        //     return Object.keys(row).some(function(key) {
+        //       return String(row[key]).toLowerCase().indexOf(state.filterKey) > -1;
+        //     });
+        //   });
+
+        //   b = listData(a)
+          
+        //   // обновляем длину массива для кнопок numberPage
+        //   state.dataLength = a.length
+        // } else {
           
           // обновляем лист таблицы после использования погинации
           b = listData(a)
