@@ -32,47 +32,14 @@ export default {
 	data: function() {
 		return {
 			searchQuery: "",
-			thData: ["дата", "имя", "количество", "расстояние"],
-			//   dbData: this.$store.state.data
-			//   dbData:  this.$store.getters.sortTable
-			db_1: [
-				{
-					"value": "th_1",
-					"content": "дата",
-				},
-				{
-					"value":"th_2",
-					"content":"имя",
-				},
-				{
-					"value":"th_3",
-					"content":"количество",
-				},
-				{
-					"value":"th_4",
-					"content":"дистанция",
-				},
-			],
-			
-			db_2: [
-				{
-					"value": "index_1",
-					"content": "дубли",
-				},
-				{
-					"value":"index_2",
-					"content":"больше чем",
-				},
-				{
-					"value":"index_3",
-					"content":"меньше чем",
-				},
-			]
 		}
 	},
 	computed: {
-		dbData() { return this.$store.getters.sortTable }
-// 	// 	count() {
+		dbData() { return this.$store.getters.sortTable },
+		thData() { return this.$store.getters.thData },
+		db_1() { return this.$store.getters.db_1 },
+		db_2() { return this.$store.getters.db_2 }
+// 	// 	count() 2
 // 	this.dbData =  this.$store.getters.sortTable }
 // // 		return this.$store.state.count
 	},

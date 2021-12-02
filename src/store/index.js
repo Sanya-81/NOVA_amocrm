@@ -4,9 +4,10 @@ import data from '../../db/index.json'
 export const store = createStore({
     state: {
       currentPage: 0,
-      size: 2,
-      data,
-      dataLength: data.length,
+      size: 5,
+      db: data,
+      data: data[0],
+      dataLength: data[0].length,
       filterKey: ''
     },
     getters: {
@@ -28,6 +29,11 @@ export const store = createStore({
         return b
         
       },
+      thData: state => {
+        return state.db[1].map((obj) => obj.content)
+      },
+      db_1: state => { return state.db[1] },
+      db_2: state => { return state.db[2] }
       // Page: (state, getters) => {
         //   getters.sortTable(state) 
         // }
