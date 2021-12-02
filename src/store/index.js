@@ -35,7 +35,8 @@ export const store = createStore({
                 });
               break;
               
-              case "количество":
+              case "количество",
+                   "расстояние":
                 if(state.key.TD === "дубли") {
                   arr = arr.filter((obj) => obj[state.key.TH] === +state.filterKey)
                   console.log(arr)
