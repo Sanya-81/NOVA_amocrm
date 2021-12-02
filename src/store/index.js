@@ -101,7 +101,8 @@ export const store = createStore({
       },
 
       thData: state => { return state.db[1].map((obj) => obj.content) },
-      db_1: state => { return state.db[1] },
+      //удаляем первый объект дата, чтобы убрать его из фильтра TH 
+      db_1: state => { return state.db[1].slice(1)},
       db_2: state => { return state.db[2] }
       },
 
