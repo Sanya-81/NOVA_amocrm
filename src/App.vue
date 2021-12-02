@@ -176,7 +176,7 @@ export default {
         font-family: 'IBM Plex Sans', sans-serif;
         box-sizing: border-box;
         color: var(--blue600);
-        background: var(--white);
+        background-color: #fff;
     }
     
     body * {

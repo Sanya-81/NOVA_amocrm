@@ -88,8 +88,8 @@ button {
         
         &:disabled {
             background-color: var(--blue100);
-            outline: 2px solid var(--red);
-            color: var(--red);
+            outline: 2px solid red;
+            color: red;
             cursor: auto;
             opacity: 0.5;
         }

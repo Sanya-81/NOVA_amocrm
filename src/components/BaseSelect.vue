@@ -279,8 +279,8 @@ export default {
         padding: 12px 0;
         border-radius: 6px;
         box-shadow: var(--shadowNormal);
-        background-color: var(--white);
-        color: var(--900);
+        background-color: #fff;
+        /* color: var(--900); */
         z-index: 1;
     }
 
