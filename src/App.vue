@@ -84,7 +84,7 @@ export default {
             "table" auto
             "pagination" auto
             "form" auto
-            /minmax(360px, 400px);
+            /minmax(360px, 768px);
         border: 2px solid var(--blue100);
         background-color: var(--white);
         filter: var(--dropShadowForm);
@@ -93,6 +93,24 @@ export default {
     .g-chd__table { grid-area: table; }
     .g-chd__pagination { grid-area: pagination; }
     .g-chd__form { grid-area: form; }
+	
+	.g-prt__form {
+        border-radius: 24px;
+        padding: 40px 30px;
+        display: grid;
+        grid: 
+            "input" auto
+            "selectTH" auto
+            "selectHD" auto
+            /minmax(360px, 768px);
+        border: 2px solid var(--blue100);
+        background-color: var(--white);
+        filter: var(--dropShadowForm);
+    }
+
+    .g-chd__input { grid-area: input; }
+    .g-chd__selectTH { grid-area: selectTH; }
+    .g-chd__selectTD { grid-area: selectTD; }
    :root {
     --number-9: 0.25;
     --number-8: 0.16;
