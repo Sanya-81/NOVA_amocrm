@@ -13,7 +13,7 @@
 		class="g-prt__form g-chd__form"
 		id="search">
 		<input
-			class="g-chd__input" 
+			class="g-chd__input input" 
 			name="query" 
 			v-model="searchQuery"/>
 		<base-select
@@ -195,4 +195,37 @@ td {
 	padding: 10px 20px;
 }
 
+</style>
+<style lang="scss">
+    .inputLable {
+        color: var(--blue800);
+    }
+    
+    .input {
+        margin-top: 7px;
+        outline: none;
+        width: 100%;
+        height: 52px;
+        padding-left: 16px;
+        border-radius: 6px;
+        border: 1px solid var(--blue100);
+        box-shadow:  var(--shadowNormal);
+        background-color: var(--white);
+    
+        &::placeholder {
+            color: var(--blue600);
+        }
+
+        &:focus {
+            box-shadow:
+                var(--shadowBorder),
+                var(--shadowActive);
+
+        }
+        &:hover {
+            box-shadow: 
+                var(--shadowBorder), 
+                var(--shadowHover);
+        }
+    }
 </style>
