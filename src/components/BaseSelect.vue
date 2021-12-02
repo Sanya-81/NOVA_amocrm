@@ -227,8 +227,8 @@ export default {
         /* --width:  360px; */
         --height:  52px;
 
-        /* width: 100%; */
-        /* height: var(--height); */
+        width: 100%;    
+        height: var(--height);
         padding: calc((var(--height) / 2) - var(--font));
         padding-left: 16px;
         border-radius: 6px;

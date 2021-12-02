@@ -126,6 +126,7 @@ export default {
     --white: #ffffff;
     --blue50: #EBF4F8;
     --blue100: #DBE2EA;
+	--blue200: #f9f9f9;
     --blue600: #0880AE;
     --blue800: #756F86;
     --blue900: #2C2738;
@@ -162,66 +163,36 @@ export default {
         0px 4px 8px var(--black7);
     
     --shadowBorder: var(--blue600) 0 0 0 2px; 
-    }
-body {
-	font-family: Helvetica Neue, Arial, sans-serif;
-	font-size: 14px;
-	color: #444;
+    } 
+	@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500&display=swap');
+
+    body {
+        font-family: 'IBM Plex Sans', sans-serif;
+		font-size: 14px;
+		color: var(--blue600);
 }
 
 table {
-	border: 2px solid #42b983;
+	border: 2px solid var(--blue900);
 	border-radius: 3px;
-	background-color: #fff;
+	background-color: var(--white);
 }
 
 th {
-	background-color: #42b983;
-	color: rgba(255, 255, 255, 0.66);
-	cursor: pointer;
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
+	background-color: var(--blue800);
+	color: var(--blue50);
+	letter-spacing: .1em;
+	
 }
 
 td {
-	background-color: #f9f9f9;
+	background-color: var(--blue200);
 }
 
 th,
 td {
-	min-width: 120px;
+	min-width: 80px;
 	padding: 10px 20px;
-}
-
-th.active {
-	color: #fff;
-}
-
-th.active .arrow {
-	opacity: 1;
-}
-
-.arrow {
-	display: inline-block;
-	vertical-align: middle;
-	width: 0;
-	height: 0;
-	margin-left: 5px;
-	opacity: 0.66;
-}
-
-.arrow.asc {
-	border-left: 4px solid transparent;
-	border-right: 4px solid transparent;
-	border-bottom: 4px solid #fff;
-}
-
-.arrow.dsc {
-	border-left: 4px solid transparent;
-	border-right: 4px solid transparent;
-	border-top: 4px solid #fff;
 }
 
 </style>
