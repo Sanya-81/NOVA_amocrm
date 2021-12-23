@@ -3,20 +3,18 @@
     <thead>
         <tr>
             <th v-for="key in thCell"
-                :key="key">
-            {{ key }}
-            </th>
+                :key="key"
+            > {{ key }} </th>
         </tr>
     </thead>
     <tbody>
         <tr 
             v-for="entry in tebleData"
-            :key="entry" >
-            <td 
+            :key="entry" 
+        >   <td 
                 v-for="key in thCell"
-                :key="key">
-            {{ entry[key] }}
-            </td>
+                :key="key"
+            > {{ entry[key] }} </td>
         </tr>
     </tbody>
 </table>
@@ -30,7 +28,3 @@ export default {
     },
 }
 </script>
-
-<style>
-
-</style>
