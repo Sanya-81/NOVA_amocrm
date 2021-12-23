@@ -31,19 +31,19 @@ export default {
 
 <style>
     table {
-        border: 2px solid var(--blue900);
+        border: 2px solid var(--blue100);
         border-radius: 3px;
         background-color: var(--grey0);
     }
 
     th {
-        background-color: var(--blue800);
-        color: var(--blue100);
+        background-color: var(--green800);
+        color: var(--grey0);
         letter-spacing: .1em;
     }
 
     td {
-        background-color: var(--blue200);
+        background-color: var(--green100);
     }
 
     th,
