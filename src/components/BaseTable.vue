@@ -3,20 +3,16 @@
     <thead>
         <tr>
             <th v-for="key in thCell"
-                :key="key"
-            > {{ key }} </th>
-        </tr>
-    </thead>
+                :key="key"> 
+            {{ key }}</th></tr></thead>
     <tbody>
         <tr 
             v-for="entry in tebleData"
-            :key="entry" 
-        >   <td 
+            :key="entry">
+            <td 
                 v-for="key in thCell"
-                :key="key"
-            > {{ entry[key] }} </td>
-        </tr>
-    </tbody>
+                :key="key"> 
+            {{ entry[key] }}</td></tr></tbody>
 </table>
 </template>
 
@@ -29,7 +25,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
     table {
         border: 2px solid var(--blue100);
         border-radius: 3px;

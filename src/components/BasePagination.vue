@@ -1,22 +1,31 @@
 <template>
-<div>
+<div
+    class="g-prt__container">
     <button
         :disabled="currentPage === 0" 
-        class="button"
+        class ="
+            g-chd__prev
+            button"
         @click="prevPage"> 
     назад</button>
-
-    <button 
-        v-for="n in numbersPage"
-        :key="n"
-        :disabled="currentPage === n - 1" 
-        class="button"
-        @click="page(n - 1)"> 
-    {{ n }}</button>
+    
+    <div
+        class="
+            g-chd__current-click-button
+            f-prt__current-click-button">
+        <button 
+            v-for="n in numbersPage"
+            :key="n"
+            :disabled="currentPage === n - 1" 
+            class="button"
+            @click="page(n - 1)"> 
+        {{ n }}</button></div>
 
     <button 
         :disabled="currentPage >= numbersPage - 1" 
-        class="button"
+        class="
+            g-chd__next
+            button"
         @click="nextPage">
     вперед</button>
     
@@ -53,7 +62,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style scoped>
     button {
         appearance: none;
         border: 0;
@@ -61,13 +70,45 @@ export default {
         background: none;
         color: inherit;
     }
+    
+    .g-prt__container {
+        display: grid;
+        /* justify-content: center; */
+        /* align-content: center; */
+        grid: 
+            "next" auto
+            "current-click-button" auto
+            "prev" auto
+            / auto;
+    }
+    
+    .g-chd__prev {
+        grid-area: prev;
+    }
+    
+    .g-chd__current-click-button {
+        grid-area: current-click-button;
+    }
+
+    .g-chd__prev {
+        grid-area: next;
+    }
+    
+    .f-prt__current-click-button {
+        display: flex;
+        justify-content: center;
+    }
+
+</style>
+
+<style lang="scss">
     .button {
-        display: inline-flex;
+        display: flex;
         justify-content: center;
         align-items: center;
         min-width: 20px;
         height: 48px;
-        margin: 0 5px;
+        margin: 5px;
         border-radius: 6px;
         padding-left: 20px;
         padding-right: 20px;

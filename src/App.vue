@@ -78,22 +78,18 @@ export default {
         padding: 40px 30px;
         display: grid;
         grid: 
-            "table" 275px
-            "pagination" 150px
             "form" auto
+            "table" auto
+            "pagination" auto
             /minmax(360px, 768px);
         border: 2px solid var(--blue100);
         background-color: var(--grey0);
-        filter: var(--dropShadowForm);
+        gap: 20px
     }
 
     .g-chd__form { grid-area: form; }
     .g-chd__table { grid-area: table; }
-    .g-chd__pagination { 
-        grid-area: pagination; 
-        justify-self: center;
-        align-self: center;
-    }
+    .g-chd__pagination { grid-area: pagination; }
 
     .g-prt__form {
         
