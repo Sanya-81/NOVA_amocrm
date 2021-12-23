@@ -1,14 +1,16 @@
 <template>
 <div>
-    <p class="selectLabel" id="jobLabel"><slot></slot></p>
-    <div class="selectWrapper">
-        <select class="
-                    selectNative 
-                    js-selectNative
-                " 
-                aria-labelledby="jobLabel"
-                @change= changeNative($event)
-                ref='native'
+    <p 
+        class="select-label" 
+        id="jobLabel"
+    >   <slot></slot>
+    </p>
+    <div class="select-wrapper">
+        <select 
+            class="select-native" 
+            aria-labelledby="jobLabel"
+            @change= changeNative($event)
+            ref='native'
         >   <option 
                 value="sel"         
                 disabled 
@@ -23,19 +25,16 @@
             
         </select>
         <div 
+            class="select-custom" 
             :class="{isActive: Active}"
-            class="
-                selectCustom 
-                js-selectCustom
-            " 
             :aria-hidden = ariaHidden
-        ><div
+        >   <div
             @click = openSelectCustom()
-            class="selectCustom-trigger"
+            class="select-custom-trigger"
                 ref='closeSelectRoot'
-            > {{elSelectState}}</div>
+            > {{elSelectState}} </div>
             <div 
-                class="selectCustom-options"
+                class="select-custom-options"
             >
                 <div
                     v-for = "(obj,index) of db"
@@ -44,7 +43,7 @@
                         {isActive: elSelectState === obj.content}, 
                         {isHover: optionChecked === obj.value}
                     ]"
-                    class = "selectCustom-option"
+                    class = "select-custom-option"
                     :data-value = obj.value
                     @mouseenter = "
                         optionChecked = obj.value, 
@@ -172,6 +171,7 @@ export default {
         document.addEventListener('click', this.closeSelectRoot)
         document.addEventListener('keydown', this.KeyboardNavigation)
     },
+    
     destroy() {
         document.removeEventListener('click', this.closeSelectRoot)
         document.removeEventListener('keydown', this.KeyboardNavigation)
@@ -180,12 +180,12 @@ export default {
 </script>
 
 <style>
-    .selectNative,
-    .selectCustom {
+    .select-native,
+    .select-custom {
         position: relative;
     }
 
-    .selectCustom {
+    .select-custom {
     position: absolute;
     width: 100%;
     top:  0;
@@ -194,34 +194,34 @@ export default {
     }
 
     @media (hover: hover) {
-        .selectCustom {
+        .select-custom {
             display: block;
         }
  
-        .selectNative:focus + .selectCustom {
+        .select-native:focus + .select-custom {
             display: none;
         }
     }
 
-    .selectNative:focus,
-    .selectCustom.isActive .selectCustom-trigger {
+    .select-native:focus,
+    .select-custom.isActive .select-custom-trigger {
         outline: none;
         box-shadow:
             var(--shadowActive);
     }
 
-    .selectLabel {
+    .select-label {
         display: block;
         margin-bottom: 0.4rem;
         color: var(--blue800);
     }
 
-    .selectWrapper {
+    .select-wrapper {
         position: relative;
     }
 
-    .selectNative,
-    .selectCustom-trigger {
+    .select-native,
+    .select-custom-trigger {
         --font:    16px;
         /* --width:  360px; */
         --height:  52px;
@@ -238,7 +238,7 @@ export default {
         line-height: 2;
     }
 
-    .selectNative {
+    .select-native {
         -webkit-appearance: none;
         -moz-appearance: none;
         border-style: none;
@@ -249,24 +249,24 @@ export default {
         background-position-y: 50%;
     }
 
-    .selectCustom-trigger { 
+    .select-custom-trigger { 
         position: relative;
         cursor: pointer;
     }
 
-    .selectCustom-trigger::after {
+    .select-custom-trigger::after {
         content: url('../../public/dropDown.svg');
         position: absolute;
         top: -65%;
         right: 5%;
     }
 
-    .selectCustom-trigger:hover {
+    .select-custom-trigger:hover {
         box-shadow: 
         var(--shadowHover);
     }
 
-    .selectCustom-options {
+    .select-custom-options {
         position: absolute;
         display: none;
         width:  100%;
@@ -278,24 +278,24 @@ export default {
         z-index: 1;
     }
 
-    .selectCustom.isActive .selectCustom-options {
+    .select-custom.isActive .select-custom-options {
         display: block;
     }
 
-    .selectCustom-option {
+    .select-custom-option {
         position: relative;
         padding: 0.8rem;
         padding-left: 16px;
         color: var(--blue800);
     }
 
-    .selectCustom-option.isHover,
-    .selectCustom-option:hover {
+    .select-custom-option.isHover,
+    .select-custom-option:hover {
         background-color: var(--blue100);
         cursor: default;
     }
 
-    .selectCustom-option:not(:last-of-type)::after {
+    .select-custom-option:not(:last-of-type)::after {
         content: "";
         position: absolute;
         bottom: 0;
@@ -304,7 +304,7 @@ export default {
         border-bottom: 1px solid var(--blue100);
     }
 
-    .selectCustom-option.isActive::before {
+    .select-custom-option.isActive::before {
         content: "✓";
         position: absolute;
         right: 5%;
