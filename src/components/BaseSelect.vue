@@ -203,7 +203,7 @@ export default {
 	.select-custom.isActive .select-custom-trigger {
 		outline: none;
 		box-shadow:
-			var(--shadowActive);
+			var(--shadowNormal);
 	}
 
 	.select-label {

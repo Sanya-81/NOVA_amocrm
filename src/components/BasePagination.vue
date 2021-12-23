@@ -73,8 +73,8 @@ export default {
         padding-right: 20px;
          
         cursor: pointer;
-        color: var(--blue50);
         font-family: 'IBM Plex Sans', sans-serif;
+        color: var(--blue600);
         box-shadow: var(--shadowNormal);
         text-shadow: var(--textShadow);
         background-color: var(--cyan-blue100);
