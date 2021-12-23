@@ -1,22 +1,19 @@
 <template>
 <div>
     <button
-      
         :disabled="currentPage === 0" 
-        @click="prevPage">
-    назад
-    </button>
+        @click="prevPage"
+    > назад </button>
     <button 
         v-for="n in numbersPage"
         :key="n"
         :disabled="currentPage === n - 1" 
-        @click="page(n - 1)">
-    {{n}}</button>
+        @click="page(n - 1)"
+    > {{n}} </button>
     <button 
         :disabled="currentPage >= numbersPage - 1" 
-        @click="nextPage">
-    вперед
-    </button>
+        @click="nextPage"
+    >вперед </button>
 </div> 
 </template>
 
@@ -51,14 +48,14 @@ export default {
 </script>
 
 <style lang="scss">
-  button {
+    button {
         appearance: none;
         border: 0;
         border-radius: 0;
         background: none;
         color: inherit;
     }
-button {
+    button {
         display: inline-flex;
         justify-content: center;
         align-items: center;
