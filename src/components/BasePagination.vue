@@ -1,6 +1,6 @@
 <template>
 <div
-    class="g-prt__container">
+    class="g-prt__pagination">
     <button
         :disabled="currentPage === 0" 
         class ="
@@ -71,10 +71,14 @@ export default {
         color: inherit;
     }
     
-    .g-prt__container {
+    .g-prt__pagination {
+         border-radius: 10px;
+        padding: 40px 30px;
+        border: 2px solid var(--blue100);
+        background-color: var(--grey0);
+        gap: 20px;
+
         display: grid;
-        /* justify-content: center; */
-        /* align-content: center; */
         grid: 
             "next" auto
             "current-click-button" auto

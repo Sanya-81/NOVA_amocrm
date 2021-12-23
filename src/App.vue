@@ -2,7 +2,7 @@
 <div class="g-prt__container--wrapper">
 <div class="g-prt__container">
     <base-pagination
-        class="g-chd__pagination">
+        class="g-chd__pagination--wrapper">
     </base-pagination>
     <base-table
         class="g-chd__table"
@@ -89,7 +89,7 @@ export default {
 
     .g-chd__form { grid-area: form; }
     .g-chd__table { grid-area: table; }
-    .g-chd__pagination { grid-area: pagination; }
+    .g-chd__pagination--wrapper { grid-area: pagination; }
 
     .g-prt__form {
         
