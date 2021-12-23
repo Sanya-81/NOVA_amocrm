@@ -179,7 +179,6 @@ export default {
 }
 </script>
 
-
 <style>
     .selectNative,
     .selectCustom {
@@ -208,7 +207,6 @@ export default {
     .selectCustom.isActive .selectCustom-trigger {
         outline: none;
         box-shadow:
-            var(--shadowBorder),
             var(--shadowActive);
     }
 
@@ -245,7 +243,7 @@ export default {
         -moz-appearance: none;
         border-style: none;
         background: url('../../public/dropDown.svg');
-        background-color: var(--white);
+        background-color: var(--grey0);
         background-repeat: no-repeat;
         background-position-x: 95%;
         background-position-y: 50%;
@@ -253,7 +251,6 @@ export default {
 
     .selectCustom-trigger { 
         position: relative;
-        filter: var(--dropShadowSelect);
         cursor: pointer;
     }
 
@@ -266,9 +263,7 @@ export default {
 
     .selectCustom-trigger:hover {
         box-shadow: 
-        var(--shadowBorder),
         var(--shadowHover);
-
     }
 
     .selectCustom-options {
@@ -279,8 +274,7 @@ export default {
         padding: 12px 0;
         border-radius: 6px;
         box-shadow: var(--shadowNormal);
-        background-color: #fff;
-        /* color: var(--900); */
+        background-color: var(--grey0);
         z-index: 1;
     }
 
@@ -297,7 +291,7 @@ export default {
 
     .selectCustom-option.isHover,
     .selectCustom-option:hover {
-        background-color: var(--blue50);
+        background-color: var(--blue100);
         cursor: default;
     }
 

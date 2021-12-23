@@ -78,11 +78,9 @@ button {
         
         &:hover {
             text-shadow: none;
-            filter: var(--dropShadowButton)
         }
 
         &:active {
-            // border: 2px solid var(--blue900);
             box-shadow: var(--shadowActive);    
         }
         

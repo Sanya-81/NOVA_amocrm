@@ -70,7 +70,7 @@ export default {
         height: 100vh;
         align-content: center;
         justify-content: center;
-        background-color: var(--blue50);
+        background-color: var(--grey200);
     }
     .g-prt__container {
         border-radius: 10px;
@@ -82,7 +82,7 @@ export default {
             "form" auto
             /minmax(360px, 768px);
         border: 2px solid var(--blue100);
-        background-color: var(--white);
+        background-color: var(--grey0);
         filter: var(--dropShadowForm);
     }
 
@@ -107,64 +107,14 @@ export default {
            "selectTH selectHD" auto
             / auto;
         border: 2px solid var(--blue100);
-        background-color: var(--white);
+        background-color: var(--grey0);
         filter: var(--dropShadowForm);
     }
 
     .g-chd__input { grid-area: input; }
     .g-chd__selectTH { grid-area: selectTH; }
     .g-chd__selectTD { grid-area: selectTD; }
-   :root {
-    --number-9: 0.25;
-    --number-8: 0.16;
-    --number-7: 0.08;
-    --number-6: 0.0001;
-    --number-5: 0.04;
-    --number-4: 0.02;
-    
-    --red: red;
-
-    --white: #ffffff;
-    --blue50: #EBF4F8;
-    --blue100: #DBE2EA;
-    --blue200: #f9f9f9;
-    --blue600: #0880AE;
-    --blue800: #61a044;
-    --blue900: #2C2738;
-
-    --black9: rgba(0, 0, 0, var(--number-9));
-    --black8: rgba(44, 39, 56, var(--number-8));
-    --black7: rgba(44, 39, 56, var(--number-7));
-    --black6: rgba(44, 39, 56, var(--number-6));
-    --black5: rgba(44, 39, 56, var(--number-5));
-    --black4: rgba(44, 39, 56, var(--number-4));
-
-    --dropShadowButton: 
-        drop-shadow(0px 4px 4px var(--black9));
-    --dropShadowSelect:
-        drop-shadow(0px 4px 8px var(--black5)),
-        drop-shadow(0px 20px 20px var(--black5));
-    --dropShadowForm:
-        drop-shadow(0px 12px 24px var(--black4)),
-        drop-shadow(0px 32px 64px var(--black5));
-    
-    --dropShadowInput: var(--dropShadowSelect);
-
-    --textShadow: 
-        0px 4px 4px var(--black9);
-    
-    --shadowNormal: 
-        0px 2px 4px var(--black7), 
-        0px 4px 8px var(--black7);
-    --shadowHover: 
-        0px 12px 24px var(--black7),
-        0px 24px 48px var(--black8);
-    --shadowActive: 
-        0px 2px 4px var(--black6), 
-        0px 4px 8px var(--black7);
-    
-    --shadowBorder: var(--blue600) 0 0 0 2px; 
-    } 
+   
     @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500&display=swap');
  
     /* 
@@ -176,7 +126,7 @@ export default {
         font-family: 'IBM Plex Sans', sans-serif;
         box-sizing: border-box;
         color: var(--blue600);
-        background-color: #fff;
+        background-color: var(--grey0);
     }
     
     body * {
@@ -187,12 +137,12 @@ export default {
 table {
     border: 2px solid var(--blue900);
     border-radius: 3px;
-    background-color: var(--white);
+    background-color: var(--grey0);
 }
 
 th {
     background-color: var(--blue800);
-    color: var(--blue50);
+    color: var(--blue100);
     letter-spacing: .1em;
     
 }
@@ -218,7 +168,7 @@ td {
         height: 52px;
         padding-left: 16px;
         border: 1px solid var(--blue100);
-        background-color: var(--white);
+        background-color: var(--grey0);
     
         &::placeholder {
             color: var(--blue600);
@@ -226,13 +176,11 @@ td {
 
         &:focus {
             box-shadow:
-                var(--shadowBorder),
-                var(--shadowActive);
+                var(--shadowNormal);
 
         }
         &:hover {
             box-shadow: 
-                var(--shadowBorder), 
                 var(--shadowHover);
         }
     }
