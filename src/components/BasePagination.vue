@@ -2,18 +2,24 @@
 <div>
     <button
         :disabled="currentPage === 0" 
-        @click="prevPage"
-    > назад </button>
+        class="button"
+        @click="prevPage"> 
+    назад</button>
+
     <button 
         v-for="n in numbersPage"
         :key="n"
         :disabled="currentPage === n - 1" 
-        @click="page(n - 1)"
-    > {{n}} </button>
+        class="button"
+        @click="page(n - 1)"> 
+    {{ n }}</button>
+
     <button 
         :disabled="currentPage >= numbersPage - 1" 
-        @click="nextPage"
-    >вперед </button>
+        class="button"
+        @click="nextPage">
+    вперед</button>
+    
 </div> 
 </template>
 
@@ -55,7 +61,7 @@ export default {
         background: none;
         color: inherit;
     }
-    button {
+    .button {
         display: inline-flex;
         justify-content: center;
         align-items: center;
@@ -71,10 +77,11 @@ export default {
         font-family: 'IBM Plex Sans', sans-serif;
         box-shadow: var(--shadowNormal);
         text-shadow: var(--textShadow);
-        background-color: var(--blue800);
+        background-color: var(--cyan-blue100);
         
         &:hover {
             text-shadow: none;
+            box-shadow: var(--shadowHover);
         }
 
         &:active {
@@ -82,9 +89,9 @@ export default {
         }
         
         &:disabled {
-            background-color: var(--blue100);
-            outline: 2px solid red;
-            color: red;
+            background-color: var(--grey100);
+            outline: 2px solid var(--magenta-red200);
+            color: var(--magenta-red500);
             cursor: auto;
             opacity: 0.5;
         }

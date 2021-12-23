@@ -28,3 +28,27 @@ export default {
     },
 }
 </script>
+
+<style>
+    table {
+        border: 2px solid var(--blue900);
+        border-radius: 3px;
+        background-color: var(--grey0);
+    }
+
+    th {
+        background-color: var(--blue800);
+        color: var(--blue100);
+        letter-spacing: .1em;
+    }
+
+    td {
+        background-color: var(--blue200);
+    }
+
+    th,
+    td {
+        min-width: 120px;
+        padding: 10px 20px;
+    }
+</style>

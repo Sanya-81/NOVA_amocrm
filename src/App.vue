@@ -35,9 +35,10 @@
 </template>
 
 <script>
-import BaseSelect from './components/BaseSelect.vue'
+import BaseTable      from './components/BaseTable.vue'
+import BaseSelect     from './components/BaseSelect.vue'
 import BasePagination from './components/BasePagination.vue'
-import BaseTable from './components/BaseTable.vue'
+
 export default {
     name: 'App',
     components:{BaseTable, BasePagination, BaseSelect},
@@ -65,7 +66,7 @@ export default {
 </script>
 
 <style>
-  .g-prt__container--wrapper {
+   .g-prt__container--wrapper {
         display: grid;
         height: 100vh;
         align-content: center;
@@ -121,7 +122,7 @@ export default {
     BOX-SIZING важен для коррекного отображения 
     select custom AND select native 
     */
- body {
+    body {
         font-size: 14px;
         font-family: 'IBM Plex Sans', sans-serif;
         box-sizing: border-box;
@@ -133,31 +134,8 @@ export default {
         box-sizing: inherit;
     }
 
-
-table {
-    border: 2px solid var(--blue900);
-    border-radius: 3px;
-    background-color: var(--grey0);
-}
-
-th {
-    background-color: var(--blue800);
-    color: var(--blue100);
-    letter-spacing: .1em;
-    
-}
-
-td {
-    background-color: var(--blue200);
-}
-
-th,
-td {
-    min-width: 120px;
-    padding: 10px 20px;
-}
-
 </style>
+
 <style lang="scss">
     .inputLable {
         color: var(--blue800);
