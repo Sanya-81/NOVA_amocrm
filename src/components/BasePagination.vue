@@ -67,7 +67,7 @@ export default {
         appearance: none;
         border: 0;
         border-radius: 0;
-        background: none;
+        /* background: none; */
         color: inherit;
     }
     
@@ -75,7 +75,7 @@ export default {
          border-radius: 10px;
         padding: 40px 30px;
         border: 2px solid var(--blue100);
-        background-color: var(--grey0);
+        background-color: var(--greySmoke);
         gap: 20px;
 
         display: grid;

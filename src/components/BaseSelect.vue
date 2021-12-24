@@ -219,7 +219,6 @@ export default {
 	.select-native,
 	.select-custom-trigger {
 		--font:    16px;
-		/* --width:  360px; */
 		--height:  52px;
 
 		width: 100%;
@@ -229,7 +228,7 @@ export default {
 		border-radius: 6px;
 		box-shadow: var(--blue100) 0 0 0 2px;
 
-		background-color: #fff;
+		background-color: var(--blueSmoke);
 		font-size: var(--font);
 		line-height: 2;
 	}

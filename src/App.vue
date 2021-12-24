@@ -104,8 +104,7 @@ export default {
            "selectTH selectHD" auto
             / auto;
         border: 2px solid var(--blue100);
-        background-color: var(--grey0);
-        filter: var(--dropShadowForm);
+        background-color: var(--greySmoke);
     }
 
     .g-chd__input { grid-area: input; }
@@ -142,7 +141,8 @@ export default {
         height: 52px;
         padding-left: 16px;
         border: 1px solid var(--blue100);
-        background-color: var(--grey0);
+        background-color: var(--blue100);
+        background-color: var(--blueSmoke);
     
         &::placeholder {
             color: var(--blue600);
