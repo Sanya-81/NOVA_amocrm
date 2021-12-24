@@ -1,5 +1,6 @@
 <template>
- <table>
+
+ <table class="overflow">
     <thead>
         <tr>
             <th v-for="key in thCell"
@@ -14,6 +15,7 @@
                 :key="key"> 
             {{ entry[key] }}</td></tr></tbody>
 </table>
+
 </template>
 
 <script>

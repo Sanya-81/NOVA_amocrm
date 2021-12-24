@@ -78,10 +78,9 @@ export default {
         padding: 40px 30px;
         display: grid;
         grid: 
-            "form" auto
-            "table" auto
-            "pagination" auto
-            /minmax(360px, 768px);
+            "table table" 270px
+            "pagination form" auto
+             /320px 320px; 
         border: 2px solid var(--blue100);
         background-color: var(--grey0);
         gap: 20px
@@ -100,8 +99,9 @@ export default {
         display: grid;
         gap: 20px;
         grid: 
-            "input input" 50px
-           "selectTH selectHD" auto
+            "input" 50px
+           "selectTH" auto 
+           "selectHD" auto
             / auto;
         border: 2px solid var(--blue100);
         background-color: var(--greySmoke);

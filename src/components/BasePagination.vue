@@ -72,7 +72,7 @@ export default {
     }
     
     .g-prt__pagination {
-         border-radius: 10px;
+         border-radius: 5px;
         padding: 40px 30px;
         border: 2px solid var(--blue100);
         background-color: var(--greySmoke);
@@ -101,6 +101,7 @@ export default {
     .f-prt__current-click-button {
         display: flex;
         justify-content: center;
+        flex-wrap: wrap;
     }
 
 </style>
