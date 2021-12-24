@@ -67,7 +67,6 @@ export default {
 		appearance: none;
 		border: 0;
 		border-radius: 0;
-		/* background: none; */
 		color: inherit;
 	}
 	
