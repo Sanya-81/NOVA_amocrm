@@ -121,7 +121,7 @@ export default {
 		color: var(--blue600);
 		box-shadow: var(--shadowNormal);
 		text-shadow: var(--textShadow);
-		background-color: var(--cyan-blue100);
+		background-color: hsl(210, 100%, 90%);
 		
 		&:hover {
 			text-shadow: none;
@@ -134,8 +134,8 @@ export default {
 		
 		&:disabled {
 			background-color: var(--grey100);
-			outline: 2px solid var(--magenta-red200);
-			color: var(--magenta-red500);
+			outline: 2px solid hsl(330, 100%, 80%);
+			color: hsl(330, 100%, 50%);
 			cursor: auto;
 			opacity: 0.5;
 		}
