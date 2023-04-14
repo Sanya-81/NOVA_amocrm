@@ -20,6 +20,11 @@
 
 <script>
 export default {
+	data() {
+		return {
+			test2: ''
+		}
+	},
 	props: {
 		tebleData: Array,
 		thCell: Array,
