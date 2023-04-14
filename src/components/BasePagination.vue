@@ -37,7 +37,7 @@ export default {
 	name: "pagination",
 	data(){
 		return {
-			test: ''
+			test: 'test'
 		}
 	},
 	computed: {
