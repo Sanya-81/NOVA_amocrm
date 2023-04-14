@@ -35,6 +35,11 @@
 <script>
 export default {
 	name: "pagination",
+	data(){
+		return {
+			test: ''
+		}
+	},
 	computed: {
 		numbersPage() {
 			return this.$store.getters.numbersPage
